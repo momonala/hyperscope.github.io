@@ -1,21 +1,152 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <style type="text/css">
-      #hyperscope {
-        width: 500px;
-        height: 500px;
-      }
-    </style>
-  </head>
   <body>
-    <div id="hyperscope"></div>
-    <script src="static/openseadragon/openseadragon.min.js"></script>
+    <div id="Title">
+      <h1>Hyperscope</h1>
+      <p>
+        automated generation of high resolution microscope imagery (hopefully) <br><br>
+        <a href="https://github.com/momonala/hyperscope"> check out the project and source code here. </a>
+      </p>
+    </div>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openSample(event, 'Paracetamol')" id="defaultOpen">Paracetamol</button>
+      <button class="tablinks" onclick="openSample(event, 'Caffeine')">Caffeine</button>
+      <button class="tablinks" onclick="openSample(event, 'Lidocaine')">Lidocaine</button>
+      <button class="tablinks" onclick="openSample(event, 'FlyWing')">Fly Wing</button>
+    </div>
+
+    <div id="Paracetamol" class="tabcontent">
+      <h3>Paracetamol</h3>
+      <div id="paracetamol_osd" style="width: 1000px; height: 700px;"></div>
+      <script src="static/openseadragon/openseadragon.min.js"></script>
+      <script>
+        var viewer = OpenSeadragon({
+          id:            'paracetamol_osd',
+          prefixUrl:     'static/openseadragon/images/',
+          tileSources:   'templates/dzi/images.dzi',
+          immediateRender:    'true',
+          showNavigator:  true,
+        });
+      </script>
+    </div>
+
+    <div id="Caffeine" class="tabcontent">
+      <h3>Caffeine</h3>
+      <div id="caffeine_osd" style="width: 1000px; height: 600px;"></div>
+      <script src="static/openseadragon/openseadragon.min.js"></script>
+      <script>
+        var viewer = OpenSeadragon({
+          id:            'caffeine_osd',
+          prefixUrl:     'static/openseadragon/images/',
+          tileSources:   'templates/dzi/images.dzi',
+          immediateRender:    'true',
+          showNavigator:  true,
+          visibilityRatio: 1.0,
+          constrainDuringPan: true,
+        });
+      </script>
+    </div>
+
+    <div id="Lidocaine" class="tabcontent">
+      <h3>Lidocaine</h3>
+      <div id="lidocaine_osd" style="width: 1000px; height: 600px;"></div>
+      <script src="static/openseadragon/openseadragon.min.js"></script>
+      <script>
+        var viewer = OpenSeadragon({
+          id:            'lidocaine_osd',
+          prefixUrl:     'static/openseadragon/images/',
+          tileSources:   'templates/dzi/images.dzi',
+          immediateRender:    'true',
+          showNavigator:  true,
+        });
+      </script>
+    </div>
+
+    <div id="FlyWing" class="tabcontent">
+      <h3>Lidocaine</h3>
+      <div id="flywing_osd" style="width: 1000px; height: 600px;"></div>
+      <script src="static/openseadragon/openseadragon.min.js"></script>
+      <script>
+        var viewer = OpenSeadragon({
+          id:            'flywing_osd',
+          prefixUrl:     'static/openseadragon/images/',
+          tileSources:   'templates/dzi/fly1.dzi',
+          immediateRender:    'true',
+          showNavigator:  true,
+        });
+      </script>
+    </div>
+
+    <!-- ------------------- vertical tab javascript and css ------------------- -->
     <script>
-      var viewer = OpenSeadragon({
-        id:            'hyperscope',
-        prefixUrl:     'static/openseadragon/images/',
-        tileSources:   'templates/dzi/images.dzi'
-      });
+    function openSample(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
     </script>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {box-sizing: border-box}
+    body {font-family: "Lato", sans-serif;}
+
+    /* Style the tab */
+    .tab {
+      float: left;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      width: 10%;
+      height: 1000px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      display: block;
+      background-color: inherit;
+      color: black;
+      padding: 22px 16px;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      float: left;
+      padding: 0px 12px;
+      border: 1px solid #ccc;
+      width: 88%;
+      border-left: none;
+      height: 1000px;
+    }
+    </style>
+    </head>
   </body>
 </html>

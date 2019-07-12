@@ -49,8 +49,7 @@ body {font-family: "Lato", sans-serif;}
     float: left;
     padding: 0px 12px;
     border: 1px solid #ccc;
-    width: 78%;
     border-left: none;
     height: 650px;
-    max-width: 78vw;
+    width: 80%;
 }

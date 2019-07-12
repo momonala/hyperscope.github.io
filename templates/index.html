@@ -12,11 +12,13 @@
 <div id="Title">
     <h1>Hyperscope</h1>
     <p>
-    automated generation of high resolution microscope imagery (hopefully) <br><br>
-    <a href="https://github.com/momonala/hyperscope"> check out the project and source code here. </a>
+    automated generation of high resolution microscope imagery (hopefully)
+    <br><br><a href="https://github.com/momonala/hyperscope"> check out the project and source code here. </a>
     </p>
+    <button onclick="toggleVerticalNavTab()">Toggle Navigation Bar</button>
 </div>
-<div class="tab">
+
+<div class="tab", id="verticalNavTab">
     {% for sample in samples %}
         {% if loop.index == 1 %}
     <button class="tablinks" onclick="openSample(event, '{{sample[0]}}')" id="defaultOpen">{{sample[1]}}</button>

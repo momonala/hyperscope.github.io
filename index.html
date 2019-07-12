@@ -20,7 +20,7 @@
     <button class="tablinks" onclick="openSample(event, 'paracetamol')" id="defaultOpen">Paracetamol</button>
     <button class="tablinks" onclick="openSample(event, 'caffeine')">Caffeine</button>
     <button class="tablinks" onclick="openSample(event, 'lidocaine_and_caffeine')">Lidocaine and Caffeine</button>
-    <button class="tablinks" onclick="openSample(event, 'flywing_files')">Fly Wing</button>
+    <button class="tablinks" onclick="openSample(event, 'flywing')">Fly Wing</button>
 </div>
 
 <div id="paracetamol" class="tabcontent">
@@ -71,12 +71,12 @@ var viewer = OpenSeadragon({
 </script>
 </div>
 
-<div id="flywing_files" class="tabcontent">
+<div id="flywing" class="tabcontent">
 <h3> Fly Wing </h3>
-<div id="flywing_files_osd" class="renderer"></div>
+<div id="flywing_osd" class="renderer"></div>
 <script>
 var viewer = OpenSeadragon({
-    id:                  'flywing_files_osd',
+    id:                  'flywing_osd',
     prefixUrl:           'static/openseadragon/images/',
     tileSources:         'dzi/flywing.dzi',
     immediateRender:     'true',
@@ -87,7 +87,7 @@ var viewer = OpenSeadragon({
 </script>
 </div>
 
-<h4><br><br>created by Mohit Nalavadi</h4>
+<div><h4><br>created by Mohit Nalavadi</h4></div>
 
 </body>
 </html>

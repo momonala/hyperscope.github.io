@@ -18,6 +18,6 @@ with open(filename, 'w') as fh:
             ('paracetamol', 'Paracetamol'),
             ('caffeine', 'Caffeine'),
             ('lidocaine_and_caffeine', 'Lidocaine and Caffeine'),
-            ('flywing_files', 'Fly Wing'),
+            ('flywing', 'Fly Wing'),
         ],
     ))

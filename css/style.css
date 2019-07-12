@@ -2,7 +2,7 @@
 .renderer {
     width: 1000px;
     height: 600px;
-    max-width: 75vw;
+    max-width: 100vw;
 }
 
 /* Style the Tabs */

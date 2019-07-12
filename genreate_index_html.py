@@ -14,6 +14,7 @@ filename = os.path.join(root, 'index.html')
 
 with open(filename, 'w') as fh:
     fh.write(template.render(
+        # List[(id, name)]
         samples=[
             ('paracetamol', 'Paracetamol'),
             ('caffeine', 'Caffeine'),

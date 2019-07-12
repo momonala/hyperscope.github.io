@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="static/openseadragon/openseadragon.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<div id="Title">
+    <h1>Hyperscope</h1>
+    <p>
+    automated generation of high resolution microscope imagery (hopefully) <br><br>
+    <a href="https://github.com/momonala/hyperscope"> check out the project and source code here. </a>
+    </p>
+</div>
+<div class="tab">
+    {% for sample in samples %}
+        <button class="tablinks" onclick="openSample(event, '{{sample[0]}}')" id="defaultOpen">{{sample[1]}}</button>
+    {% endfor %}
+</div>
+
+{% for sample in samples %}
+    <div id="{{sample[0]}}" class="tabcontent">
+    <h3>{{sample[1]}}</h3>
+    <div id="{{sample[0]}}_osd" class="renderer"></div>
+    <script>
+    var viewer = OpenSeadragon({
+      id:            '{{sample[0]}}_osd',
+      prefixUrl:     'static/openseadragon/images/',
+      tileSources:   'templates/dzi/{{sample[0]}}.dzi',
+      immediateRender:    'true',
+      showNavigator:  true,
+      visibilityRatio: 1.0,
+      constrainDuringPan: true,
+    });
+    </script>
+    </div>
+{% endfor %}
+
+<!-- ------------------- vertical tab javascript ------------------- -->
+<script>
+function openSample(evt, cityName) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+document.getElementById(cityName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

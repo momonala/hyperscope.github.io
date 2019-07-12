@@ -4,60 +4,7 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="static/openseadragon/openseadragon.min.js"></script>
-    <style type="text/css">
-        .renderer {
-         width: 1000px;
-         height: 600px;
-         max-width: 95vw;
-     }</style>
-    <style>
-    * {box-sizing: border-box}
-    body {font-family: "Lato", sans-serif;}
-
-    /* Style the tab */
-    .tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 20%;
-    height: 650px;
-    }
-
-    /* Style the buttons inside the tab */
-    .tab button {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-    }
-
-    /* Change background color of buttons on hover */
-    .tab button:hover {
-    background-color: #ddd;
-    }
-
-    /* Create an active/current "tab button" class */
-    .tab button.active {
-    background-color: #ccc;
-    }
-
-    /* Style the tab content */
-    .tabcontent {
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 80%;
-    border-left: none;
-    height: 650px;
-    }
-</style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -69,20 +16,20 @@
     </p>
 </div>
 <div class="tab">
-    <button class="tablinks" onclick="openSample(event, 'Paracetamol')" id="defaultOpen">Paracetamol</button>
-    <button class="tablinks" onclick="openSample(event, 'Caffeine')">Caffeine</button>
-    <button class="tablinks" onclick="openSample(event, 'Lidocaine')">Lidocaine</button>
-    <button class="tablinks" onclick="openSample(event, 'FlyWing')">Fly Wing</button>
+    <button class="tablinks" onclick="openSample(event, 'paracetamol')" id="defaultOpen">Paracetamol</button>
+    <button class="tablinks" onclick="openSample(event, 'caffeine')">Caffeine</button>
+    <button class="tablinks" onclick="openSample(event, 'lidocaine_and_caffeine')">Lidocaine and Caffeine</button>
+    <button class="tablinks" onclick="openSample(event, 'flywing')">Fly Wing</button>
 </div>
 
-<div id="Paracetamol" class="tabcontent">
+<div id="paracetamol" class="tabcontent">
     <h3>Paracetamol</h3>
     <div id="paracetamol_osd" class="renderer"></div>
     <script>
     var viewer = OpenSeadragon({
       id:            'paracetamol_osd',
       prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/images.dzi',
+      tileSources:   'templates/dzi/paracetamol.dzi',
       immediateRender:    'true',
       showNavigator:  true,
       visibilityRatio: 1.0,
@@ -91,14 +38,14 @@
     </script>
 </div>
 
-<div id="Caffeine" class="tabcontent">
+<div id="caffeine" class="tabcontent">
     <h3>Paracetamol</h3>
     <div id="caffeine_osd" class="renderer"></div>
     <script>
     var viewer = OpenSeadragon({
       id:            'caffeine_osd',
       prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/images.dzi',
+      tileSources:   'templates/dzi/caffeine.dzi',
       immediateRender:    'true',
       showNavigator:  true,
       visibilityRatio: 1.0,
@@ -107,14 +54,14 @@
     </script>
 </div>
 
-<div id="Lidocaine" class="tabcontent">
+<div id="lidocaine_and_caffeine" class="tabcontent">
     <h3>Paracetamol</h3>
-    <div id="lidocaine_osd" class="renderer"></div>
+    <div id="lidocaine_and_caffeine_osd" class="renderer"></div>
     <script>
     var viewer = OpenSeadragon({
-      id:            'lidocaine_osd',
+      id:            'lidocaine_and_caffeine_osd',
       prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/images.dzi',
+      tileSources:   'templates/dzi/lidocaine_and_caffeine.dzi',
       immediateRender:    'true',
       showNavigator:  true,
       visibilityRatio: 1.0,
@@ -123,14 +70,14 @@
     </script>
 </div>
 
-<div id="Fly Wing" class="tabcontent">
+<div id="flywing" class="tabcontent">
     <h3>Paracetamol</h3>
     <div id="flywing_osd" class="renderer"></div>
     <script>
     var viewer = OpenSeadragon({
       id:            'flywing_osd',
       prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/fly1.dzi',
+      tileSources:   'templates/dzi/flywing.dzi',
       immediateRender:    'true',
       showNavigator:  true,
       visibilityRatio: 1.0,
@@ -138,7 +85,6 @@
     });
     </script>
 </div>
-
 
 <!-- ------------------- vertical tab javascript ------------------- -->
 <script>

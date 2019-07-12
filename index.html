@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="static/openseadragon/openseadragon.min.js"></script>
+    <script src="js/vertical_tab.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -19,92 +20,74 @@
     <button class="tablinks" onclick="openSample(event, 'paracetamol')" id="defaultOpen">Paracetamol</button>
     <button class="tablinks" onclick="openSample(event, 'caffeine')">Caffeine</button>
     <button class="tablinks" onclick="openSample(event, 'lidocaine_and_caffeine')">Lidocaine and Caffeine</button>
-    <button class="tablinks" onclick="openSample(event, 'flywing')">Fly Wing</button>
+    <button class="tablinks" onclick="openSample(event, 'flywing_files')">Fly Wing</button>
 </div>
 
 <div id="paracetamol" class="tabcontent">
-    <h3>Paracetamol</h3>
-    <div id="paracetamol_osd" class="renderer"></div>
-    <script>
-    var viewer = OpenSeadragon({
-      id:            'paracetamol_osd',
-      prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/paracetamol.dzi',
-      immediateRender:    'true',
-      showNavigator:  true,
-      visibilityRatio: 1.0,
-      constrainDuringPan: true,
-    });
-    </script>
+<h3> Paracetamol </h3>
+<div id="paracetamol_osd" class="renderer"></div>
+<script>
+var viewer = OpenSeadragon({
+    id:                  'paracetamol_osd',
+    prefixUrl:           'static/openseadragon/images/',
+    tileSources:         'dzi/paracetamol.dzi',
+    immediateRender:     'true',
+    showNavigator:       'true',
+    visibilityRatio:     '1.0',
+    constrainDuringPan:  'true',
+});
+</script>
 </div>
 
 <div id="caffeine" class="tabcontent">
-    <h3>Paracetamol</h3>
-    <div id="caffeine_osd" class="renderer"></div>
-    <script>
-    var viewer = OpenSeadragon({
-      id:            'caffeine_osd',
-      prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/caffeine.dzi',
-      immediateRender:    'true',
-      showNavigator:  true,
-      visibilityRatio: 1.0,
-      constrainDuringPan: true,
-    });
-    </script>
+<h3> Caffeine </h3>
+<div id="caffeine_osd" class="renderer"></div>
+<script>
+var viewer = OpenSeadragon({
+    id:                  'caffeine_osd',
+    prefixUrl:           'static/openseadragon/images/',
+    tileSources:         'dzi/caffeine.dzi',
+    immediateRender:     'true',
+    showNavigator:       'true',
+    visibilityRatio:     '1.0',
+    constrainDuringPan:  'true',
+});
+</script>
 </div>
 
 <div id="lidocaine_and_caffeine" class="tabcontent">
-    <h3>Paracetamol</h3>
-    <div id="lidocaine_and_caffeine_osd" class="renderer"></div>
-    <script>
-    var viewer = OpenSeadragon({
-      id:            'lidocaine_and_caffeine_osd',
-      prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/lidocaine_and_caffeine.dzi',
-      immediateRender:    'true',
-      showNavigator:  true,
-      visibilityRatio: 1.0,
-      constrainDuringPan: true,
-    });
-    </script>
-</div>
-
-<div id="flywing" class="tabcontent">
-    <h3>Paracetamol</h3>
-    <div id="flywing_osd" class="renderer"></div>
-    <script>
-    var viewer = OpenSeadragon({
-      id:            'flywing_osd',
-      prefixUrl:     'static/openseadragon/images/',
-      tileSources:   'templates/dzi/flywing.dzi',
-      immediateRender:    'true',
-      showNavigator:  true,
-      visibilityRatio: 1.0,
-      constrainDuringPan: true,
-    });
-    </script>
-</div>
-
-<!-- ------------------- vertical tab javascript ------------------- -->
+<h3> Lidocaine and Caffeine </h3>
+<div id="lidocaine_and_caffeine_osd" class="renderer"></div>
 <script>
-function openSample(evt, cityName) {
-var i, tabcontent, tablinks;
-tabcontent = document.getElementsByClassName("tabcontent");
-for (i = 0; i < tabcontent.length; i++) {
-tabcontent[i].style.display = "none";
-}
-tablinks = document.getElementsByClassName("tablinks");
-for (i = 0; i < tablinks.length; i++) {
-tablinks[i].className = tablinks[i].className.replace(" active", "");
-}
-document.getElementById(cityName).style.display = "block";
-evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+var viewer = OpenSeadragon({
+    id:                  'lidocaine_and_caffeine_osd',
+    prefixUrl:           'static/openseadragon/images/',
+    tileSources:         'dzi/lidocaine_and_caffeine.dzi',
+    immediateRender:     'true',
+    showNavigator:       'true',
+    visibilityRatio:     '1.0',
+    constrainDuringPan:  'true',
+});
 </script>
+</div>
+
+<div id="flywing_files" class="tabcontent">
+<h3> Fly Wing </h3>
+<div id="flywing_files_osd" class="renderer"></div>
+<script>
+var viewer = OpenSeadragon({
+    id:                  'flywing_files_osd',
+    prefixUrl:           'static/openseadragon/images/',
+    tileSources:         'dzi/flywing.dzi',
+    immediateRender:     'true',
+    showNavigator:       'true',
+    visibilityRatio:     '1.0',
+    constrainDuringPan:  'true',
+});
+</script>
+</div>
+
+<h4><br><br>created by Mohit Nalavadi</h4>
 
 </body>
 </html>

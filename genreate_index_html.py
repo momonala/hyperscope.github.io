@@ -5,7 +5,10 @@ from jinja2 import Environment, FileSystemLoader
 env = Environment(
     loader=FileSystemLoader('')
 )
-template = env.get_template('index.html')
+env.trim_blocks = True
+env.lstrip_blocks = True
+
+template = env.get_template('templates/index.html')
 root = os.path.dirname(os.path.abspath(__file__))
 filename = os.path.join(root, 'index.html')
 
@@ -15,6 +18,6 @@ with open(filename, 'w') as fh:
             ('paracetamol', 'Paracetamol'),
             ('caffeine', 'Caffeine'),
             ('lidocaine_and_caffeine', 'Lidocaine and Caffeine'),
-            ('flywing', 'Fly Wing'),
+            ('flywing_files', 'Fly Wing'),
         ],
     ))

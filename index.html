@@ -18,7 +18,7 @@
     <button onclick="toggleVerticalNavTab()">Toggle Navigation Bar</button>
 </div>
 
-<div class="tab", id="verticalNavTab">
+<div class="tab" id="verticalNavTab">
     <button class="tablinks" onclick="openSample(event, 'paracetamol')" id="defaultOpen">Paracetamol</button>
     <button class="tablinks" onclick="openSample(event, 'caffeine')">Caffeine</button>
     <button class="tablinks" onclick="openSample(event, 'lidocaine_and_caffeine')">Lidocaine and Caffeine</button>
@@ -28,7 +28,7 @@
 <div id="paracetamol" class="tabcontent">
 <h3> Paracetamol </h3>
 <div id="paracetamol_osd" class="renderer"></div>
-<script>
+<script type="text/javascript">
 var viewer = OpenSeadragon({
     id:                  'paracetamol_osd',
     prefixUrl:           'static/openseadragon/images/',
@@ -44,7 +44,7 @@ var viewer = OpenSeadragon({
 <div id="caffeine" class="tabcontent">
 <h3> Caffeine </h3>
 <div id="caffeine_osd" class="renderer"></div>
-<script>
+<script type="text/javascript">
 var viewer = OpenSeadragon({
     id:                  'caffeine_osd',
     prefixUrl:           'static/openseadragon/images/',
@@ -60,7 +60,7 @@ var viewer = OpenSeadragon({
 <div id="lidocaine_and_caffeine" class="tabcontent">
 <h3> Lidocaine and Caffeine </h3>
 <div id="lidocaine_and_caffeine_osd" class="renderer"></div>
-<script>
+<script type="text/javascript">
 var viewer = OpenSeadragon({
     id:                  'lidocaine_and_caffeine_osd',
     prefixUrl:           'static/openseadragon/images/',
@@ -76,7 +76,7 @@ var viewer = OpenSeadragon({
 <div id="flywing" class="tabcontent">
 <h3> Fly Wing </h3>
 <div id="flywing_osd" class="renderer"></div>
-<script>
+<script type="text/javascript">
 var viewer = OpenSeadragon({
     id:                  'flywing_osd',
     prefixUrl:           'static/openseadragon/images/',
@@ -89,7 +89,7 @@ var viewer = OpenSeadragon({
 </script>
 </div>
 
-<div><h4><br>created by Mohit Nalavadi</h4></div>
+<div id="credit"><br>created by Mohit Nalavadi</div>
 
 </body>
 </html>

@@ -33,7 +33,7 @@ function toggleVerticalNavTab() {
         }
         var tabRendererElements = document.getElementsByClassName('renderer');
         for(var i=0; i<tabRendererElements.length; i++) {
-            tabRendererElements[i].style.width = "75%";
+            tabRendererElements[i].style.width = "78vw";
         }
     }
     else {
@@ -46,7 +46,7 @@ function toggleVerticalNavTab() {
         }
         var tabRendererElements = document.getElementsByClassName('renderer');
         for(var i=0; i<tabRendererElements.length; i++) {
-            tabRendererElements[i].style.width = "100%";
+            tabRendererElements[i].style.width = "100vw";
         }
     }
 }

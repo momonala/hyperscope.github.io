@@ -18,7 +18,7 @@
     <button onclick="toggleVerticalNavTab()">Toggle Navigation Bar</button>
 </div>
 
-<div class="tab", id="verticalNavTab">
+<div class="tab" id="verticalNavTab">
     {% for sample in samples %}
         {% if loop.index == 1 %}
     <button class="tablinks" onclick="openSample(event, '{{sample[0]}}')" id="defaultOpen">{{sample[1]}}</button>
@@ -32,7 +32,7 @@
 <div id="{{sample[0]}}" class="tabcontent">
 <h3> {{sample[1]}} </h3>
 <div id="{{sample[0]}}_osd" class="renderer"></div>
-<script>
+<script type="text/javascript">
 var viewer = OpenSeadragon({
     id:                  '{{sample[0]}}_osd',
     prefixUrl:           'static/openseadragon/images/',
@@ -46,7 +46,7 @@ var viewer = OpenSeadragon({
 </div>
 
 {% endfor %}
-<div><h4><br>created by Mohit Nalavadi</h4></div>
+<div id="credit"><br>created by Mohit Nalavadi</div>
 
 </body>
 </html>
